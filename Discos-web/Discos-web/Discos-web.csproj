@@ -67,16 +67,56 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Default.aspx" />
+    <Content Include="DiscosList.aspx" />
+    <Content Include="FormularioDiscos.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="ListaDiscos.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Discos.Master.cs">
+      <DependentUpon>Discos.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Discos.Master.designer.cs">
+      <DependentUpon>Discos.Master</DependentUpon>
+    </Compile>
+    <Compile Include="DiscosList.aspx.cs">
+      <DependentUpon>DiscosList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DiscosList.aspx.designer.cs">
+      <DependentUpon>DiscosList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioDiscos.aspx.cs">
+      <DependentUpon>FormularioDiscos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormularioDiscos.aspx.designer.cs">
+      <DependentUpon>FormularioDiscos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="ListaDiscos.aspx.cs">
+      <DependentUpon>ListaDiscos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListaDiscos.aspx.designer.cs">
+      <DependentUpon>ListaDiscos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Discos.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -88,6 +128,16 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\dominio\dominio.csproj">
+      <Project>{ed445f30-d9f8-4fff-b2ff-c9c2e7b6e557}</Project>
+      <Name>dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\negocio\negocio.csproj">
+      <Project>{b1c665eb-60c7-4bb1-b9c9-c58dea177ef2}</Project>
+      <Name>negocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

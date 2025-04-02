@@ -38,6 +38,12 @@ namespace negocio
                 throw ex;
             }
         }
+        public void setearProcedure(string sp)
+        {
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+
+            comando.CommandText = sp;
+        }
         public void ejecutarAccion()
         {
             comando.Connection = conexion;

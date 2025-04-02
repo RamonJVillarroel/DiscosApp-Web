@@ -16,3 +16,12 @@ C:\Users\Admin\Desktop\csharpescritorio\discosapp\DiscosApp\negocio\obj\Debug\ne
 C:\Users\Admin\Desktop\csharpescritorio\discosapp\DiscosApp\negocio\obj\Debug\negocio.csproj.Up2Date
 C:\Users\Admin\Desktop\csharpescritorio\discosapp\DiscosApp\negocio\obj\Debug\negocio.dll
 C:\Users\Admin\Desktop\csharpescritorio\discosapp\DiscosApp\negocio\obj\Debug\negocio.pdb
+C:\Users\Admin\Desktop\webapps\discos-app\Discos-web\negocio\bin\Debug\negocio.dll
+C:\Users\Admin\Desktop\webapps\discos-app\Discos-web\negocio\bin\Debug\negocio.pdb
+C:\Users\Admin\Desktop\webapps\discos-app\Discos-web\negocio\bin\Debug\dominio.dll
+C:\Users\Admin\Desktop\webapps\discos-app\Discos-web\negocio\bin\Debug\dominio.pdb
+C:\Users\Admin\Desktop\webapps\discos-app\Discos-web\negocio\obj\Debug\negocio.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\webapps\discos-app\Discos-web\negocio\obj\Debug\negocio.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\webapps\discos-app\Discos-web\negocio\obj\Debug\negocio.csproj.Up2Date
+C:\Users\Admin\Desktop\webapps\discos-app\Discos-web\negocio\obj\Debug\negocio.dll
+C:\Users\Admin\Desktop\webapps\discos-app\Discos-web\negocio\obj\Debug\negocio.pdb

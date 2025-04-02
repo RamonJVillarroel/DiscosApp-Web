@@ -13,8 +13,9 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                string consulta = "SELECT d.Id, titulo, FechaLanzamiento,CantidadCanciones,UrlImagenTapa, e.Descripcion as Genero, e.Id as IdGenero, TE.Descripcion AS PLATAFORMA, TE.Id as IdPlataforma FROM DISCOS as D inner join ESTILOS as e on d.IdEstilo=e.Id INNER JOIN TIPOSEDICION AS TE on d.IdTipoEdicion = TE.Id AND d.Activo=1;";
-                datos.setearConsulta(consulta);
+                //string consulta = "SELECT d.Id, titulo, FechaLanzamiento,CantidadCanciones,UrlImagenTapa, e.Descripcion as Genero, e.Id as IdGenero, TE.Descripcion AS PLATAFORMA, TE.Id as IdPlataforma FROM DISCOS as D inner join ESTILOS as e on d.IdEstilo=e.Id INNER JOIN TIPOSEDICION AS TE on d.IdTipoEdicion = TE.Id AND d.Activo=1;";
+                //datos.setearConsulta(consulta);
+                datos.setearProcedure("storedListar");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -24,12 +25,7 @@ namespace negocio
                     aux.Nombre = (string)datos.Lector["titulo"];
                     aux.CantidadDeCanciones = (int)datos.Lector["CantidadCanciones"];
                     aux.fechaDeLanzamiento = (DateTime)datos.Lector["FechaLanzamiento"];
-                    //verificacion de que no sea nulo
-                    //if (!(datos.Lector.IsDBNull(datos.Lector.GetOrdinal("UrlImagenTapa"))))
-                    //{
-                    //   aux.UrlImagenTapa = (string)datos.Lector["UrlImagenTapa"];
-                    // }
-                    //FORMA DOS DE VERIFICACION
+                  
                     if (!(datos.Lector["UrlImagenTapa"] is DBNull))
                     {
                         aux.UrlImagenTapa = (string)datos.Lector["UrlImagenTapa"];
@@ -61,7 +57,7 @@ namespace negocio
             try
             {
                 //para insertar datos se puede hacer de esta forma
-                string consulta = "INSERT INTO DISCOS(Titulo, FechaLanzamiento, CantidadCanciones, UrlImagenTapa, IdEstilo, IdTipoEdicion)VALUES('" + NuevoDisco.Nombre + "',GETDATE()," + NuevoDisco.CantidadDeCanciones + ",'" + NuevoDisco.UrlImagenTapa + "', @IdEstilo, @IdTipoEdicion);";
+                string consulta = "INSERT INTO DISCOS(Titulo, FechaLanzamiento, CantidadCanciones, UrlImagenTapa, IdEstilo, IdTipoEdicion, Activo)VALUES('" + NuevoDisco.Nombre + "',GETDATE()," + NuevoDisco.CantidadDeCanciones + ",'" + NuevoDisco.UrlImagenTapa + "', @IdEstilo, @IdTipoEdicion,1);";
 
                 datos.setearParametro("@IdEstilo", NuevoDisco.Genero.Id);
                 datos.setearParametro("@IdTipoEdicion", NuevoDisco.Plataforma.Id);
@@ -128,7 +124,6 @@ namespace negocio
 
             
         }
-
         public List<Disco> filtrar(string campo, string criterio, string filtro)
         {
             List<Disco> lista = new List<Disco>();

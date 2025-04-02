@@ -10,3 +10,9 @@ C:\Users\Admin\Desktop\csharpescritorio\discosapp\DiscosApp\dominio\obj\Debug\do
 C:\Users\Admin\Desktop\csharpescritorio\discosapp\DiscosApp\dominio\obj\Debug\dominio.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Desktop\csharpescritorio\discosapp\DiscosApp\dominio\obj\Debug\dominio.dll
 C:\Users\Admin\Desktop\csharpescritorio\discosapp\DiscosApp\dominio\obj\Debug\dominio.pdb
+C:\Users\Admin\Desktop\webapps\discos-app\Discos-web\dominio\bin\Debug\dominio.dll
+C:\Users\Admin\Desktop\webapps\discos-app\Discos-web\dominio\bin\Debug\dominio.pdb
+C:\Users\Admin\Desktop\webapps\discos-app\Discos-web\dominio\obj\Debug\dominio.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\webapps\discos-app\Discos-web\dominio\obj\Debug\dominio.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\webapps\discos-app\Discos-web\dominio\obj\Debug\dominio.dll
+C:\Users\Admin\Desktop\webapps\discos-app\Discos-web\dominio\obj\Debug\dominio.pdb
