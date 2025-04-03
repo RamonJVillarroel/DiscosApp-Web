@@ -15,9 +15,10 @@ namespace Discos_web
         {
             try
             {
-                
+
                 if (!IsPostBack)
                 {
+                    //Configuracion Inicial
                     //Para poder seleccionar elemendos recuerda hacer lo siguiente
                     PlataformaNegocio negocioPlataforma = new PlataformaNegocio();
                     List<Plataforma> listaPlataforma = new List<Plataforma>();
@@ -33,8 +34,32 @@ namespace Discos_web
                     ddlGenero.DataTextField = "Descripcion";
                     ddlGenero.DataBind();
                     ddlPlataforma.DataBind();
+
                 }
-            }catch (Exception ex){ }
+                //Configuracion para Editar disco puede ir fuera del postback recordarle que no sea un postback a la hora de modificar
+                if (Request.QueryString["IdDisco"] != null && !IsPostBack)
+                {
+                    DiscoNegocio discoNegocio = new DiscoNegocio();
+                    var id = Request.QueryString["IdDisco"];
+                    int.Parse(id);
+                    List<Disco> Lista1Disco = discoNegocio.Listar(id);
+
+                    Disco DiscoSeleccionado = Lista1Disco[0];
+                    txtTitulo.Text = DiscoSeleccionado.Nombre;
+                    txtFechaLanzamiento.SelectedDate = DiscoSeleccionado.fechaDeLanzamiento;
+                    var canciones = DiscoSeleccionado.CantidadDeCanciones;
+                    txtCanciones.Text = canciones.ToString();
+                    ddlPlataforma.SelectedValue = DiscoSeleccionado.Plataforma.Id.ToString();
+                    ddlGenero.SelectedValue = DiscoSeleccionado.Genero.Id.ToString();
+                    txtUrlImg.Text = DiscoSeleccionado.UrlImagenTapa.ToString();                    
+                    txtUrlImg_TextChanged(sender, e);
+
+
+
+                }
+
+            }
+            catch (Exception ex){ }
 
         }
 
@@ -60,8 +85,19 @@ namespace Discos_web
                 NuevoDisco.Plataforma.Id = int.Parse(ddlPlataforma.SelectedValue);
                 NuevoDisco.Genero = new Genero();
                 NuevoDisco.Genero.Id = int.Parse(ddlGenero.SelectedValue);
-                discoNegocio.agregar(NuevoDisco);
-                Response.Redirect("DiscosList.aspx");
+                //modificar discos
+                if (Request.QueryString["IdDisco"] !=null)
+                {
+                    var id = Request.QueryString["IdDisco"];
+                    int idDisco = int.Parse(id);
+                    NuevoDisco.IdDisco = idDisco;
+                    discoNegocio.modificar(NuevoDisco);
+                }
+                else
+                {
+                    discoNegocio.agregar(NuevoDisco);
+                }
+                Response.Redirect("DiscosList.aspx",false);
             }
             catch(Exception ex)
             {

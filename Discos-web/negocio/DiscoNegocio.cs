@@ -6,16 +6,19 @@ namespace negocio
 {
     public class DiscoNegocio
     {
-        public List<Disco> Listar()
+        public List<Disco> Listar(string id="")
         {
             List<Disco> lista = new List<Disco>();
             
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                //string consulta = "SELECT d.Id, titulo, FechaLanzamiento,CantidadCanciones,UrlImagenTapa, e.Descripcion as Genero, e.Id as IdGenero, TE.Descripcion AS PLATAFORMA, TE.Id as IdPlataforma FROM DISCOS as D inner join ESTILOS as e on d.IdEstilo=e.Id INNER JOIN TIPOSEDICION AS TE on d.IdTipoEdicion = TE.Id AND d.Activo=1;";
-                //datos.setearConsulta(consulta);
-                datos.setearProcedure("storedListar");
+                string consulta = "SELECT d.Id, titulo, FechaLanzamiento,CantidadCanciones,UrlImagenTapa, e.Descripcion as Genero, e.Id as IdGenero, TE.Descripcion AS PLATAFORMA, TE.Id as IdPlataforma FROM DISCOS as D inner join ESTILOS as e on d.IdEstilo=e.Id INNER JOIN TIPOSEDICION AS TE on d.IdTipoEdicion = TE.Id AND d.Activo=1";
+                if (id != "") {
+                    consulta += " and d.Id = " + id;
+                }
+                datos.setearConsulta(consulta);
+                //datos.setearProcedure("storedListar");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())

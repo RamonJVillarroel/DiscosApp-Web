@@ -20,5 +20,11 @@ namespace Discos_web
              
 
         }
+
+        protected void dgvListadoDisco_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string id = dgvListadoDisco.SelectedDataKey.Value.ToString();
+            Response.Redirect("FormularioDiscos.aspx?IdDisco=" + id);
+        }
     }
 }
