@@ -11,20 +11,23 @@ namespace Discos_web
     public partial class FormularioDiscos : System.Web.UI.Page
     {
         public string imgDisco { get; set; }
+        public bool ConfirmaEliminar { get; set; }
+        public bool eliminar = false;
         protected void Page_Load(object sender, EventArgs e)
         {
             try
             {
-
+                ConfirmaEliminar = false;
                 if (!IsPostBack)
                 {
+                    
                     //Configuracion Inicial
                     //Para poder seleccionar elemendos recuerda hacer lo siguiente
                     PlataformaNegocio negocioPlataforma = new PlataformaNegocio();
                     List<Plataforma> listaPlataforma = new List<Plataforma>();
                     GenerosNegocio negocioGenero = new GenerosNegocio();
                     List<Genero> listaGenero = new List<Genero>();
-
+                    
 
                     ddlPlataforma.DataSource = negocioPlataforma.Listar();
                     ddlPlataforma.DataValueField = "Id";
@@ -34,11 +37,13 @@ namespace Discos_web
                     ddlGenero.DataTextField = "Descripcion";
                     ddlGenero.DataBind();
                     ddlPlataforma.DataBind();
+          
 
                 }
                 //Configuracion para Editar disco puede ir fuera del postback recordarle que no sea un postback a la hora de modificar
                 if (Request.QueryString["IdDisco"] != null && !IsPostBack)
                 {
+                    eliminar = true;
                     DiscoNegocio discoNegocio = new DiscoNegocio();
                     var id = Request.QueryString["IdDisco"];
                     int.Parse(id);
@@ -54,8 +59,6 @@ namespace Discos_web
                     txtUrlImg.Text = DiscoSeleccionado.UrlImagenTapa.ToString();                    
                     txtUrlImg_TextChanged(sender, e);
 
-
-
                 }
 
             }
@@ -65,7 +68,9 @@ namespace Discos_web
 
         protected void txtUrlImg_TextChanged(object sender, EventArgs e)
         {
+            //imgDisco = txtUrlImg.Text;
             imgDisco = txtUrlImg.Text;
+            imgPreview.ImageUrl = imgDisco; 
         }
 
         protected void btnSubmitDisco_Click(object sender, EventArgs e)
@@ -103,6 +108,36 @@ namespace Discos_web
             {
 
             }
+        }
+
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Default.aspx", false);
+        }
+
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+          
+            ConfirmaEliminar = true;
+              
+        }
+
+        protected void ConfirmarEliminar_Click(object sender, EventArgs e)
+        {
+            DiscoNegocio discoNegocio = new DiscoNegocio();
+            try
+            {
+                if (chkEliminar.Checked)
+                {
+                    discoNegocio.eliminar(int.Parse(Request.QueryString["IdDisco"]));
+                    Response.Redirect("ListaDiscos.aspx", false);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
         }
     }
 }

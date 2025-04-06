@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Admin\\Desktop\\webapps\\discos-app\\Discos-web\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2B1F8BFA-D36F-4736-9F83-2A82312B2B6F}|Discos-web\\Discos-web.csproj|c:\\users\\admin\\desktop\\webapps\\discos-app\\discos-web\\discos-web\\formulariodiscos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2B1F8BFA-D36F-4736-9F83-2A82312B2B6F}|Discos-web\\Discos-web.csproj|solutionrelative:discos-web\\formulariodiscos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1C665EB-60C7-4BB1-B9C9-C58DEA177EF2}|negocio\\negocio.csproj|c:\\users\\admin\\desktop\\webapps\\discos-app\\discos-web\\negocio\\disconegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1C665EB-60C7-4BB1-B9C9-C58DEA177EF2}|negocio\\negocio.csproj|solutionrelative:negocio\\disconegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2B1F8BFA-D36F-4736-9F83-2A82312B2B6F}|Discos-web\\Discos-web.csproj|c:\\users\\admin\\desktop\\webapps\\discos-app\\discos-web\\discos-web\\formulariodiscos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{2B1F8BFA-D36F-4736-9F83-2A82312B2B6F}|Discos-web\\Discos-web.csproj|solutionrelative:discos-web\\formulariodiscos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B1F8BFA-D36F-4736-9F83-2A82312B2B6F}|Discos-web\\Discos-web.csproj|C:\\Users\\Admin\\Desktop\\webapps\\discos-app\\Discos-web\\discos-web\\formulariodiscos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B1F8BFA-D36F-4736-9F83-2A82312B2B6F}|Discos-web\\Discos-web.csproj|solutionrelative:discos-web\\formulariodiscos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,32 +23,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "DiscoNegocio.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\webapps\\discos-app\\Discos-web\\negocio\\DiscoNegocio.cs",
-              "RelativeDocumentMoniker": "negocio\\DiscoNegocio.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\webapps\\discos-app\\Discos-web\\negocio\\DiscoNegocio.cs",
-              "RelativeToolTip": "negocio\\DiscoNegocio.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFAAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-03T02:58:52.812Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "FormularioDiscos.aspx.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\webapps\\discos-app\\Discos-web\\Discos-web\\FormularioDiscos.aspx.cs",
               "RelativeDocumentMoniker": "Discos-web\\FormularioDiscos.aspx.cs",
               "ToolTip": "C:\\Users\\Admin\\Desktop\\webapps\\discos-app\\Discos-web\\Discos-web\\FormularioDiscos.aspx.cs",
               "RelativeToolTip": "Discos-web\\FormularioDiscos.aspx.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAwwCYAAACGAAAAAAAAAA==",
+              "ViewState": "AgIAADsAAAAAAAAAAAAwwE8AAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-03T00:18:59.248Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "FormularioDiscos.aspx",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\webapps\\discos-app\\Discos-web\\Discos-web\\FormularioDiscos.aspx",
               "RelativeDocumentMoniker": "Discos-web\\FormularioDiscos.aspx",
