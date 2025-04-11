@@ -9,8 +9,10 @@
          <Columns>
              <asp:BoundField HeaderText="Id" DataField="IdDisco" />
              <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
-             <asp:BoundField HeaderText="Numero de canciones" DataField="CantidadDeCanciones" />
+            <%--<asp:BoundField HeaderText="Numero de canciones" DataField="CantidadDeCanciones" /> --%> 
+             <asp:CheckBoxField HeaderText="Activo" DataField="Activo" />
              <asp:CommandField HeaderText="Accion" ShowSelectButton="true" SelectText="Modificar" />
+ 
          </Columns>
      
      </asp:GridView>

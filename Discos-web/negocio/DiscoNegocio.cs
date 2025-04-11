@@ -13,7 +13,7 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                string consulta = "SELECT d.Id, titulo, FechaLanzamiento,CantidadCanciones,UrlImagenTapa, e.Descripcion as Genero, e.Id as IdGenero, TE.Descripcion AS PLATAFORMA, TE.Id as IdPlataforma FROM DISCOS as D inner join ESTILOS as e on d.IdEstilo=e.Id INNER JOIN TIPOSEDICION AS TE on d.IdTipoEdicion = TE.Id AND d.Activo=1";
+                string consulta = "SELECT d.Id, titulo, FechaLanzamiento,CantidadCanciones,UrlImagenTapa, e.Descripcion as Genero, e.Id as IdGenero, TE.Descripcion AS PLATAFORMA, TE.Id as IdPlataforma, Activo  FROM DISCOS as D inner join ESTILOS as e on d.IdEstilo=e.Id INNER JOIN TIPOSEDICION AS TE on d.IdTipoEdicion = TE.Id";
                 if (id != "") {
                     consulta += " and d.Id = " + id;
                 }
@@ -40,7 +40,7 @@ namespace negocio
                     aux.Plataforma = new Plataforma();
                     aux.Plataforma.Descripcion = (string)datos.Lector["Plataforma"];
                     aux.Plataforma.Id = (int)datos.Lector["IdPlataforma"];
-
+                    aux.Activo = (bool)datos.Lector["Activo"];
                     // aux.fechaDeLanzamiento = (string)lector["FechaLanzamiento"];
                     lista.Add(aux);
                 }
@@ -60,8 +60,8 @@ namespace negocio
             try
             {
                 //para insertar datos se puede hacer de esta forma
-                string consulta = "INSERT INTO DISCOS(Titulo, FechaLanzamiento, CantidadCanciones, UrlImagenTapa, IdEstilo, IdTipoEdicion, Activo)VALUES('" + NuevoDisco.Nombre + "',GETDATE()," + NuevoDisco.CantidadDeCanciones + ",'" + NuevoDisco.UrlImagenTapa + "', @IdEstilo, @IdTipoEdicion,1);";
-
+                string consulta = "INSERT INTO DISCOS(Titulo, FechaLanzamiento, CantidadCanciones, UrlImagenTapa, IdEstilo, IdTipoEdicion, Activo)VALUES('" + NuevoDisco.Nombre + "',@Lanzamiento," + NuevoDisco.CantidadDeCanciones + ",'" + NuevoDisco.UrlImagenTapa + "', @IdEstilo, @IdTipoEdicion,1)";
+                datos.setearParametro("@Lanzamiento", NuevoDisco.fechaDeLanzamiento);
                 datos.setearParametro("@IdEstilo", NuevoDisco.Genero.Id);
                 datos.setearParametro("@IdTipoEdicion", NuevoDisco.Plataforma.Id);
                 datos.setearConsulta(consulta);
@@ -111,14 +111,15 @@ namespace negocio
 
 
         }
-        public void eliminarLogico(int idDisco)
+        public void eliminarLogico(int idDisco, bool activar=false)
         {
             try
             {
                 AccesoDatos datos = new AccesoDatos();
 
-                datos.setearConsulta("update DISCOS set Activo = 0 where id = @idDisco");
+                datos.setearConsulta("update DISCOS set Activo = @activo where id = @idDisco");
                 datos.setearParametro("@IdDisco", idDisco);
+                datos.setearParametro("@activo", activar);
                 datos.ejecutarAccion();
 
 

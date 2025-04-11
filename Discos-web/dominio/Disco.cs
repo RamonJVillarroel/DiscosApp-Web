@@ -20,5 +20,7 @@ namespace dominio
         public Genero Genero { get; set; }
 
         public Plataforma Plataforma { get; set; }
+
+        public bool Activo { get; set; }
     }
 }

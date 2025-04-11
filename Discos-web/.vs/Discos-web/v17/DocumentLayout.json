@@ -1,54 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Admin\\Desktop\\webapps\\discos-app\\Discos-web\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{2B1F8BFA-D36F-4736-9F83-2A82312B2B6F}|Discos-web\\Discos-web.csproj|c:\\users\\admin\\desktop\\webapps\\discos-app\\discos-web\\discos-web\\formulariodiscos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{2B1F8BFA-D36F-4736-9F83-2A82312B2B6F}|Discos-web\\Discos-web.csproj|solutionrelative:discos-web\\formulariodiscos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2B1F8BFA-D36F-4736-9F83-2A82312B2B6F}|Discos-web\\Discos-web.csproj|C:\\Users\\Admin\\Desktop\\webapps\\discos-app\\Discos-web\\discos-web\\formulariodiscos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2B1F8BFA-D36F-4736-9F83-2A82312B2B6F}|Discos-web\\Discos-web.csproj|solutionrelative:discos-web\\formulariodiscos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 1,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FormularioDiscos.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\webapps\\discos-app\\Discos-web\\Discos-web\\FormularioDiscos.aspx.cs",
-              "RelativeDocumentMoniker": "Discos-web\\FormularioDiscos.aspx.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\webapps\\discos-app\\Discos-web\\Discos-web\\FormularioDiscos.aspx.cs",
-              "RelativeToolTip": "Discos-web\\FormularioDiscos.aspx.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAAwwE8AAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-03T00:18:59.248Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FormularioDiscos.aspx",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\webapps\\discos-app\\Discos-web\\Discos-web\\FormularioDiscos.aspx",
-              "RelativeDocumentMoniker": "Discos-web\\FormularioDiscos.aspx",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\webapps\\discos-app\\Discos-web\\Discos-web\\FormularioDiscos.aspx",
-              "RelativeToolTip": "Discos-web\\FormularioDiscos.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-04-03T00:18:56.92Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

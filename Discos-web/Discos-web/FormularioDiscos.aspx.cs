@@ -48,8 +48,12 @@ namespace Discos_web
                     var id = Request.QueryString["IdDisco"];
                     int.Parse(id);
                     List<Disco> Lista1Disco = discoNegocio.Listar(id);
-
+                    //guardado de objeto en la session
                     Disco DiscoSeleccionado = Lista1Disco[0];
+                    Session.Add("DiscoSeleccionado", DiscoSeleccionado);
+
+
+                   
                     txtTitulo.Text = DiscoSeleccionado.Nombre;
                     txtFechaLanzamiento.SelectedDate = DiscoSeleccionado.fechaDeLanzamiento;
                     var canciones = DiscoSeleccionado.CantidadDeCanciones;
@@ -58,6 +62,12 @@ namespace Discos_web
                     ddlGenero.SelectedValue = DiscoSeleccionado.Genero.Id.ToString();
                     txtUrlImg.Text = DiscoSeleccionado.UrlImagenTapa.ToString();                    
                     txtUrlImg_TextChanged(sender, e);
+                    //configuracion para activar o inactivar
+                    if (!DiscoSeleccionado.Activo)
+                    {
+                        ElimarLogico.Text = "Activar";
+                    }
+
 
                 }
 
@@ -82,7 +92,7 @@ namespace Discos_web
                 NuevoDisco.Nombre = txtTitulo.Text;
                 //Calendar causa postbac ver como manejarlo....
                 //La fecha esta llegando con el Calendar pero no se esta mandando a la DB ver como trabajar con fechas en web
-                NuevoDisco.fechaDeLanzamiento= txtFechaLanzamiento.SelectedDate;
+                NuevoDisco.fechaDeLanzamiento = txtFechaLanzamiento.SelectedDate;
                 NuevoDisco.CantidadDeCanciones = int.Parse(txtCanciones.Text);
                 NuevoDisco.UrlImagenTapa = txtUrlImg.Text;
                 //La forma para instanciar objetos a usar cosas especificas deberia ser asi
@@ -124,9 +134,10 @@ namespace Discos_web
 
         protected void ConfirmarEliminar_Click(object sender, EventArgs e)
         {
-            DiscoNegocio discoNegocio = new DiscoNegocio();
+            
             try
             {
+                DiscoNegocio discoNegocio = new DiscoNegocio();
                 if (chkEliminar.Checked)
                 {
                     discoNegocio.eliminar(int.Parse(Request.QueryString["IdDisco"]));
@@ -138,6 +149,28 @@ namespace Discos_web
                 throw ex;
             }
 
+        }
+
+        protected void ActivadorLogico_Click(object sender, EventArgs e)
+        {
+            
+            try
+            {
+                DiscoNegocio discoNegocio = new DiscoNegocio();
+                Disco DiscoSeleccionado = (Disco)Session["DiscoSeleccionado"];
+                if (chkEliminar.Checked)
+                {
+                    //Definicion de objeto para activar o desactivar
+                    
+                    discoNegocio.eliminarLogico(DiscoSeleccionado.IdDisco, !DiscoSeleccionado.Activo);
+                    Response.Redirect("ListaDiscos.aspx", false);
+                }
+
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }
