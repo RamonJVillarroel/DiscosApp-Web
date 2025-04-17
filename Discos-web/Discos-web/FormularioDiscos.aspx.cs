@@ -20,7 +20,11 @@ namespace Discos_web
                 ConfirmaEliminar = false;
                 if (!IsPostBack)
                 {
-                    
+                    if (Session["User"] == null)
+                    {
+                        Session.Add("error", "debes estar lofgueado para entrar");
+                        Response.Redirect("error.aspx", false);
+                    }
                     //Configuracion Inicial
                     //Para poder seleccionar elemendos recuerda hacer lo siguiente
                     PlataformaNegocio negocioPlataforma = new PlataformaNegocio();
@@ -43,6 +47,11 @@ namespace Discos_web
                 //Configuracion para Editar disco puede ir fuera del postback recordarle que no sea un postback a la hora de modificar
                 if (Request.QueryString["IdDisco"] != null && !IsPostBack)
                 {
+                    if (Session["User"] == null)
+                    {
+                        Session.Add("error", "debes estar lofgueado para entrar");
+                        Response.Redirect("error.aspx", false);
+                    }
                     eliminar = true;
                     DiscoNegocio discoNegocio = new DiscoNegocio();
                     var id = Request.QueryString["IdDisco"];

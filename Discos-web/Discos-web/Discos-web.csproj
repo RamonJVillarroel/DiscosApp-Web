@@ -69,7 +69,9 @@
   <ItemGroup>
     <Content Include="Default.aspx" />
     <Content Include="DiscosList.aspx" />
+    <Content Include="error.aspx" />
     <Content Include="FormularioDiscos.aspx" />
+    <Content Include="FormularioLogin.aspx" />
     <Content Include="Global.asax" />
     <Content Include="ListaDiscos.aspx" />
     <Content Include="Web.config" />
@@ -96,12 +98,26 @@
     <Compile Include="DiscosList.aspx.designer.cs">
       <DependentUpon>DiscosList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="error.aspx.cs">
+      <DependentUpon>error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="error.aspx.designer.cs">
+      <DependentUpon>error.aspx</DependentUpon>
+    </Compile>
     <Compile Include="FormularioDiscos.aspx.cs">
       <DependentUpon>FormularioDiscos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="FormularioDiscos.aspx.designer.cs">
       <DependentUpon>FormularioDiscos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioLogin.aspx.cs">
+      <DependentUpon>FormularioLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormularioLogin.aspx.designer.cs">
+      <DependentUpon>FormularioLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

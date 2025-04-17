@@ -14,6 +14,11 @@ namespace Discos_web
        
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["User"] == null)
+            {
+                Session.Add("error", "debes estar lofgueado para entrar");
+                Response.Redirect("error.aspx", false);
+            }
             DiscoNegocio negocio = new DiscoNegocio();
             dgvListadoDisco.DataSource = negocio.Listar();
             dgvListadoDisco.DataBind();

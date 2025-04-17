@@ -14,8 +14,8 @@
         </div>
         <div class="mb-3">
             <label for="txtFechaLanzamiento" class="form-label">Fecha de lanzamiento</label>
-            <asp:Calendar ID="txtFechaLanzamiento" type="date" class="form-control" runat="server"></asp:Calendar>
-
+          <%---- ver como cambiar a esto  <asp:TextBox ID="txtFechaLanzamiento" runat="server" class="form-control" TextMode="DateTime"></asp:TextBox> ---%>  
+           <asp:Calendar ID="txtFechaLanzamiento" type="date" class="form-control" runat="server"></asp:Calendar>
         </div>
         <div class="mb-3">
             <label for="txtCanciones" class="form-label">Cantidad de canciones</label>

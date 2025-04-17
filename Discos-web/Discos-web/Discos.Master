@@ -17,7 +17,8 @@
             <div class="container">
                 <a href="Default.aspx" class="navbar-brand mb-0 h1">Navbar</a>
                 <a class="none nav-link" href="/DiscosList.aspx">Productos</a>
-                 <a class="none nav-link" href="/ListaDiscos.aspx">Listado</a>
+                <a class="none nav-link" href="/ListaDiscos.aspx">Listado</a>
+                <a class="none nav-link" href="/FormularioLogin.aspx">Login</a>
             </div>
         </nav>
     </div>
@@ -25,6 +26,8 @@
         <div class="container">
          <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
          <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server"></asp:ContentPlaceHolder>
+         <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server"></asp:ContentPlaceHolder>
+         <asp:ContentPlaceHolder ID="ContentPlaceHolder4" runat="server"></asp:ContentPlaceHolder>
         </div>
   
     </form>
