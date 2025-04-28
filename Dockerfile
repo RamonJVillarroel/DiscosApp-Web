@@ -14,7 +14,7 @@ WORKDIR /app/Discos-web/Discos-web
 RUN dotnet restore
 
 # Compilar el proyecto
-RUN dotnet publish Discos-web.csproj -c Release -o /app/publish
+RUN dotnet publish /app/Discos-web/Discos-web/Discos-web.csproj -c Release -o /app/publish
 
 # Usar una imagen más liviana para producción
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
