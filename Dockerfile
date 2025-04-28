@@ -8,18 +8,18 @@ WORKDIR /app
 COPY . .
 
 # Ir a la carpeta donde realmente está el proyecto
-WORKDIR /app/Discos-web/
+WORKDIR /app/Discos-web/Discos-web
 
 # Restaurar dependencias
 RUN dotnet restore
 
 # Compilar el proyecto
-RUN dotnet publish /app/Discos-web/Discos-web.csproj -c Release -o /app/publish
+RUN dotnet publish /app/Discos-web/Discos-web/Discos-web.csproj -c Release -o /app/publish
 
 # Usar una imagen más liviana para producción
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
 
-WORKDIR /app
+WORKDIR /app/Discos-web/Discos-web
 COPY --from=build /app/publish .
 
 # Arrancar la app
