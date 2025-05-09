@@ -16,7 +16,7 @@ namespace Discos_web
         {
             if (Session["User"] == null)
             {
-                Session.Add("error", "debes estar lofgueado para entrar");
+                Session.Add("error", "debes estar logueado para entrar");
                 Response.Redirect("error.aspx", false);
             }
             DiscoNegocio negocio = new DiscoNegocio();

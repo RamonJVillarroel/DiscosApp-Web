@@ -1,4 +1,4 @@
-﻿<%@ Page Title="DiscosList" Language="C#" MasterPageFile="~/Discos.Master" AutoEventWireup="true" CodeBehind="DiscosList.aspx.cs" Inherits="Discos_web.DiscosList" %>
+﻿<%@ Page Title="DiscosApp" Language="C#" MasterPageFile="~/Discos.Master" AutoEventWireup="true" CodeBehind="DiscosList.aspx.cs" Inherits="Discos_web.DiscosList" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

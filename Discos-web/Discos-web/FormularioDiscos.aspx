@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Discos.Master" AutoEventWireup="true" CodeBehind="FormularioDiscos.aspx.cs" Inherits="Discos_web.FormularioDiscos" %>
+﻿<%@ Page Title="DiscosApp" Language="C#" MasterPageFile="~/Discos.Master" AutoEventWireup="true" CodeBehind="FormularioDiscos.aspx.cs" Inherits="Discos_web.FormularioDiscos" %>
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">

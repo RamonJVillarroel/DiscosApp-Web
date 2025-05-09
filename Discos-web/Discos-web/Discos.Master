@@ -15,9 +15,9 @@
     <div>
         <nav class="navbar navbar-light bg-light">
             <div class="container">
-                <a href="Default.aspx" class="navbar-brand mb-0 h1">Navbar</a>
-                <a class="none nav-link" href="/DiscosList.aspx">Productos</a>
-                <a class="none nav-link" href="/ListaDiscos.aspx">Listado</a>
+                <a href="Default.aspx" class="navbar-brand mb-0 h1">Discos App</a>
+                <a class="none nav-link" href="/DiscosList.aspx">Discos</a>
+                <a class="none nav-link" href="/ListaDiscos.aspx">Edición</a>
                 <a class="none nav-link" href="/FormularioLogin.aspx">Login</a>
             </div>
         </nav>
